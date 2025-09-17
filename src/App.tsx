@@ -50,7 +50,7 @@ const App = () => {
 
   return (
     <div 
-    className='md:w-[800px] w-[600px] flex flex-col items-center mx-aut gap-8'>
+    className='md:w-[800px] w-full flex flex-col items-center mx-auto gap-8'>
       <div className="text-2xl text-center">
         {isWinner && "You win mother fucker"}
         {isLosser && "What a fuckin losser"}
@@ -60,7 +60,7 @@ const App = () => {
         <video
           ref={videoRef}
           src={relapseSong}
-          className="md:w-[400px] w-full h-full rounded-lg absolute top-[200px] md:top-10"
+          className="md:w-[400px] w-full rounded-lg absolute top-[100px] md:top-10 px-2"
           controls
         />
       )}
@@ -69,6 +69,7 @@ const App = () => {
         <HangmanWord 
         wordToGuess={wordToGuess} 
         guessedLetters={guessedLetters}
+        reveal={isLosser}
         />
         <HangmanKeyboard
         disabled={isWinner || isLosser}

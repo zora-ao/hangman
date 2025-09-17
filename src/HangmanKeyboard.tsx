@@ -37,7 +37,7 @@ type HangmanKeyboardProps = {
 const HangmanKeyboard = ({disabled, activeLetters, inactiveLetters,  addGuessedLetter} : HangmanKeyboardProps) => {
 
     return (
-        <div className="grid md:grid-cols-13 grid-cols-5 gap-2">
+        <div className="flex flex-wrap gap-2 p-2">
             {KEYS.map((letter, index) => {
                 const isActive = activeLetters.includes(letter);
                 const isInactive = inactiveLetters.includes(letter);
@@ -45,7 +45,7 @@ const HangmanKeyboard = ({disabled, activeLetters, inactiveLetters,  addGuessedL
                     <button 
                     disabled={disabled || isActive || isInactive}
                     onClick={() => addGuessedLetter(letter)}
-                    className={`${isActive ? "bg-blue-400" : ""} ${isInactive ? "opacity-30" : ""} hover:bg-blue-400 focus:outline-1 focus:outline-blue-950 border uppercase font-bold text-4xl md:text-2xl w-[80px] h-[80px] md:h-[50px] md:w-[50px] rounded`} key={index}>
+                    className={`${isActive ? "bg-blue-400" : ""} ${isInactive ? "opacity-30" : ""} hover:bg-blue-400 focus:outline-1 focus:outline-blue-950 border uppercase font-bold text-xl md:text-2xl w-[30px] h-[30px] md:h-[50px] md:w-[50px] rounded`} key={index}>
                         {letter}
                     </button>
                 )
