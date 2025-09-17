@@ -7,7 +7,7 @@ import Footer from "./Footer";
 import relapseSong from './assets/snaptik_7439119275677224208_v2.mp4';
 
 const App = () => {
-  const [wordToGuess, setWordToGuess] = useState('missu');
+  const wordToGuess = 'missu';
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
